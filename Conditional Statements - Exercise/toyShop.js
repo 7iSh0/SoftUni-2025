@@ -4,16 +4,16 @@ function toyShop(tripPrice, puzzelCount, dollCount, bearCount, minnionCount, tru
     let numOfToys = puzzelCount + dollCount + bearCount + minnionCount + truckCount;
     
     if (numOfToys >= 50) {
-        priceOfToys *= 0.75;
+       priceOfToys *= 0.75;
     }
 
-    let afterRent = priceOfToys * 0.9;
+    priceOfToys *= 0.9;
 
-    if (afterRent > tripPrice) {
-        let moneyLeft = afterRent - tripPrice;
+    if (priceOfToys >= tripPrice) {
+        let moneyLeft = priceOfToys - tripPrice;
         console.log(`Yes! ${moneyLeft.toFixed(2)} lv left.`);
     } else {
-        let moneyNeeded = tripPrice - afterRent;
+        let moneyNeeded = tripPrice - priceOfToys;
         console.log(`Not enough money! ${moneyNeeded.toFixed(2)} lv needed.`);
     }
 

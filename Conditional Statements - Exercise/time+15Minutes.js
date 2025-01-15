@@ -13,7 +13,7 @@ function timeMinutes(hour, min) {
     if (newMin < 10) {
         console.log(`${newHour}:0${newMin}`);
     } else {
-        console.log(`${newHour}:0${newMin}`);
+        console.log(`${newHour}:${newMin}`);
     }
 
 }
