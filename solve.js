@@ -67,3 +67,14 @@
 
 // shift + alt + надолу - copy цял ред
 // ctrl + shift + L - заменям променлива навсякъде в кода
+
+// let i = 1
+// while(i <= 10) { if (true) { break; } console.log(i); i++ }
+
+// let text = input[index];
+// index++; един след друг
+
+// Number.MAX_SAFE_INTEGER най-голямото положително
+// Number.MIN_SAFE_INTEGER  най-малкото отрицателно
+
+// continue = прекъсва текущата интерация и продължава към следващия цикъл
