@@ -1,20 +1,18 @@
 function pipesInPool(vPool, p1Pipes, p2Pipes, hWorkerDelay) {
 
-    let pipes1 = p1Pipes * hWorkerDelay;
-    let pipes2 = p2Pipes * hWorkerDelay;
-    let twoPipes = pipes1 + pipes2;
-    let filledPool = twoPipes / 100;
-    let filedPoolProcent = filledPool / 100;
-    let p1PipesContr = pipes1 / filedPoolProcent;
-    let p2PipesContr = pipes2 / filedPoolProcent;
+    let waterFromPipe1 = p1Pipes * hWorkerDelay;
+    let waterFromPipe2 = p2Pipes * hWorkerDelay;
+    let totalWater = waterFromPipe1 + waterFromPipe2;
 
-    if (vPool >= twoPipes) {
-        console.log(`The pool is ${filedPoolProcent.toFixed(2)}% full. Pipe 1: ${p1PipesContr.toFixed(2)}%. Pipe 2: ${p2PipesContr.toFixed(2)}%.`);
+    if (totalWater <= vPool) {
+        let percentFull = (totalWater / vPool) * 100;
+        let percentPipe1 = (waterFromPipe1 / totalWater) * 100;
+        let percentPipe2 = (waterFromPipe2 / totalWater) * 100;
+        console.log(`The pool is ${percentFull.toFixed(2)}% full. Pipe 1: ${percentPipe1.toFixed(2)}%. Pipe 2: ${percentPipe2.toFixed(2)}%.`);
     } else {
-        let waterMore = twoPipes - vPool;
-        console.log(`For ${hWorkerDelay} hours the pool overflows with ${waterMore.toFixed(2)} liters.`)
+        let overflow = totalWater - vPool
+        console.log(`For ${hWorkerDelay.toFixed(2)} hours the pool overflows with ${overflow.toFixed(2)} liters.`)
     }
-
 }
 
 pipesInPool(1000, 100, 120, 3);

@@ -1,15 +1,16 @@
 function fuelTank(fuel, litresOfFuel) {
 
-        let validFuel = litresOfFuel >= 25 && litresOfFuel <= 25;
-    
-        if (!validFuel) {
-            console.log("Invalid fuel!");
-        } else if (litresOfFuel >= 25) {
+    fuel = fuel.toLowerCase();
+
+    if (fuel === "diesel" || fuel === "gasoline" || fuel === "gas") {
+        if (litresOfFuel >= 25) {
             console.log(`You have enough ${fuel}.`);
-        } else if (litresOfFuel <= 25) {
+        } else {
             console.log(`Fill your tank with ${fuel}!`);
-        } 
-    
+        }
+    } else {
+        console.log("Invalid fuel!");
     }
+}
 
 fuelTank("Kerosene", 200);
